@@ -19,7 +19,7 @@
 				}else{
 					return false
 				}
-			}, "Tem que ter arroba no começo")
+			}, "`@` no começo")
 		
 			$(document).ready(function(){
 				$("#formCadastro").validate({
@@ -52,9 +52,12 @@
 							minlength: 5
 					 
                         },
+						// n consegui validar, apenas requerer 
+						var: cpf = $('#cpf').val()
+						
 					},
 					submitHandler: function(form){
-						alert("Sucessoooooooooo")						
+						alert("CERTO!")						
 					}
 				})
 			})
@@ -69,12 +72,17 @@
 					<input type="text" name="nome" id="nome" class="form-control" />
 				</div>
 				<div class="row">
+					<label>Data de Nascimento</label>
+					<input type="date" name="Data" id="Data" class="form-control" />
+				</div>
+				<div class="row">
 					<label>E-mail</label>
 					<input type="email" name="email" id="email" class="form-control" />
 				</div>
-				<p>CPF:</p>
-                    <input type="text" name="cpf" id="cpf" obrigatorio="sim"
-                    rotulo="CPF" tipo_dado="cpf" size="25" maxlength="14"/>				
+				<div class="row">
+					<label>CPF:</label>
+                    <input type="text" name="cpf" id="cpf"  class="form-control"  style="border-color: aquamarine;"/>
+				</div>		
 				<div class="row">
 					<label>Cidade</label>
 					<select name="cidade" id="cidade" class="form-control">
