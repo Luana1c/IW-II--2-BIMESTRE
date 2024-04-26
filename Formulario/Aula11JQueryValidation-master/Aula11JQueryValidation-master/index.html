@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>JQuery Validation</title>		
+		<title>FORM.</title>		
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -26,13 +26,15 @@
 					rules:{
 						nome: {
 							required: true,
-							maxlength: 100,
-							minlength: 10,
-							minWords: 2
+							maxlength: 26,
+							minWords: 2,
+							//* fornecer pelo menos 10 caracteres
+							minlength: 10
 						},
 						email: {
 							required: true,
-							email: true
+							email: true,
+							minlength: 15
 						},
 						cidade: {
 							required: true
@@ -40,11 +42,16 @@
 						idade: {
 							required: true,
 							min: 1,
-							max: 120
+							max: 20
 						},
 						instagram: {
 							arrobaNoInicio: true
-						}
+						},
+						GitHub:{
+							arrobaNoInicio: true,
+							minlength: 5
+					 
+                        },
 					},
 					submitHandler: function(form){
 						alert("Sucessoooooooooo")						
@@ -55,23 +62,26 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Validação de formulários com JQuery Validation</h1>
+			<h1>Formulários para estudantes da grande SP</h1>
 			<form name="formCadastro" id="formCadastro" method="post">
 				<div class="row">
-					<label>Nome</label>
+					<label>Nome Completo</label>
 					<input type="text" name="nome" id="nome" class="form-control" />
 				</div>
 				<div class="row">
 					<label>E-mail</label>
 					<input type="email" name="email" id="email" class="form-control" />
-				</div>				
+				</div>
+				<p>CPF:</p>
+                    <input type="text" name="cpf" id="cpf" obrigatorio="sim"
+                    rotulo="CPF" tipo_dado="cpf" size="25" maxlength="14"/>				
 				<div class="row">
 					<label>Cidade</label>
 					<select name="cidade" id="cidade" class="form-control">
 						<option value="">----</option>
-						<option value="APARECIDA">Aparecida</option>
-						<option value="GUARATINGUETA">Guaratinguetá</option>
-						<option value="CUNHA">Cunha</option>
+						<option value="SP">SP</option>
+						<option value="ABC">ABC</option>
+						<option value="SANTOS">SANTOS</option>
 					</select>
 				</div>
 				<div class="row">
@@ -82,6 +92,10 @@
 					<label>Instagram</label>
 					<input type="text" name="instagram" id="instagram" class="form-control" />
 				</div>
+				<div class="row">
+					<label>GitHub</label>
+					<input type="text" name="GitHub" id="GitHub" class="form-control" />
+				</div><br>
 				<div class="row">
 					<input type="submit" name="enviar" id="enviar" class="btn btn-primary form-control" />
 				</div>
