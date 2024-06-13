@@ -12,7 +12,7 @@ app.get('/sobre', function(req, res){
 })
 
 app.get('/blog', function(req, res){
-    res.send("Blog da Lele")
+    res.send("Blog")
 })
 
 app.get('/cadastro/:nome/:cargo', function(req, res){
